@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School</title>
+    <link rel="icon" type="image/png" href="png.png" />
+  <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        /* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    background: #fcfcfc;
+    color: rgb(241, 21, 21);
+    padding: 5px;
+    border-radius: 10px;
+  }
+  
+  header .logo img{
+    height: 100px;
+    margin-right: 20px;
+  }
+  .est{
+    margin-left: 18px;
+  }
+  
+  header .school-info h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-style: inherit;
+  }
+  
+  header .school-info p {
+    font-size: 1rem;
+  }
+
+ /* Navbar Styles */
+.navbar {
+    background-color: #213346;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: #28a745; /* Green color for all links */
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+  
+  .nav-list .active {
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .nav-list .dropdown {
+    position: relative;
+  }
+  
+  .nav-list .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f6f7f8;
+    list-style: none;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .nav-list .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .nav-list .dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #28a745;
+    background-color: #ffffff;
+    text-align: left;
+  }
+  
+  .nav-list .dropdown-menu a:hover {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  /* Mobile Menu */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+  }
+  
+  .nav-list.active {
+    flex-direction: column;
+    display: block;
+    background-color: #007bff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+  }
+  
+  .nav-list.active .dropdown-menu {
+    position: relative;
+  }
+  
+  .nav-list.active a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .nav-list {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+/* text running start */
+
+.scroll-left {
+    height: 50px;	
+    /* width: 500px; */
+    overflow: hidden;
+    position: relative;
+    /* background: rgb(247, 247, 245); */
+    color: rgb(245, 67, 12);
+    /* border: 1px solid orange; */
+   }
+   .scroll-left p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    transform:translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-left 15s linear infinite;
+   }
+   /* Move it (define the animation) */
+   @keyframes scroll-left {
+    0%   {
+    transform: translateX(100%); 		
+    }
+    100% {
+    transform: translateX(-100%); 
+    }
+   }
+   
+   /* text running stop */
+        .hero-section {
+            /*background: url("photo-collage.png.png") no-repeat center center/cover;*/
+            color: white;
+            height: 100%;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .feature-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(9, 236, 47, 0.2);
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Adjust the height based on your needs */
+            overflow: hidden;
+            
+          }
+          
+          .slides {
+            display: flex;
+            width: 100%; /* Total width: 100% for each image */
+            height: 100%;
+            animation: slide 20s infinite;
+          }
+          
+          .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          
+          @keyframes slide {
+            0% {
+              transform: translateX(0%);
+            }
+            10% {
+              transform: translateX(-50%);
+            }
+            20% {
+              transform: translateX(-100%);
+            }
+            30% {
+              transform: translateX(-150%);
+            }
+            40% {
+              transform: translateX(-200%);
+            }
+            30% {
+              transform: translateX(-150%);
+            }
+            20% {
+              transform: translateX(-100%);
+            }
+            10% {
+              transform: translateX(-50%);
+            }
+            0% {
+              transform: translateX(0%);
+            }
+          }
+
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="logo">
+          <img src="png.png" alt="School Logo">
+          <div class="est"> EST: 2007</div>
+        </div>
+        <div class="school-info">
+          <h1>MAA SARASWATI SHISHU MANDIR</h1>
+          <p>Dharampur bande hat, Samastipur, Bihar 848504</p>
+        </div>
+      </header>
+
+      <nav class="navbar">
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="gallery.html">Admission</a></li>
+          <li><a href="#">Registration</a></li>
+          <li class="dropdown">
+            <a href="#">Academic</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Book List</a></li>
+              <li><a href="#">Dress</a></li>
+              <li><a href="#">Dues</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Facility</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Computer Lab</a></li>
+              <li><a href="#">Audio Visual</a></li>
+              <li><a href="#">Library</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Online Payment</a></li>
+        </ul>
+      </nav>
+
+      <!-- <div class="scroll-left">
+        <p>Office mobile number :- 9801346257   Office mobile number :- 9801346257   Office mobile number :- 9801346257</p>
+        </div> -->
+
+    <!-- Hero Section -->
+    <!-- <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to MySchool</h1>
+            <p>Empowering young minds for a brighter future.</p>
+            <a href="#about" class="btn btn-primary">Learn More</a>
+        </div>
+    </section> -->
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Us</h2>
+                    <p>MySchool is dedicated to providing top-quality education and fostering an environment where students thrive. Our mission is to nurture creativity, critical thinking, and leadership in every student.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="About us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <h4>Experienced Faculty</h4>
+                        <p>Our teachers are highly qualified and dedicated to student success.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <h4>State-of-the-Art Facilities</h4>
+                        <p>Modern classrooms, laboratories, and sports facilities for holistic development.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box text-center">
+                        <h4>Comprehensive Curriculum</h4>
+                        <p>Our curriculum integrates academics, arts, and extracurricular activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="slider">
+        <div class="slides">
+          <img src="g1.jpg" alt="Image 1">
+          <img src="g2.jpg" alt="Image 2">
+          <img src="g3.jpg" alt="Image 3">
+          <img src="g11.jpg" alt="Image 4">
+          <img src="g1.jpg" alt="Image 1">
+          <img src="g2.jpg" alt="Image 2">
+          <img src="g3.jpg" alt="Image 3">
+          <img src="g10.jpg" alt="Image 4">
+          <img src="g1.jpg" alt="Image 1">
+          <img src="g2.jpg" alt="Image 2">
+          <img src="g3.jpg" alt="Image 3">
+          <img src="g11.jpg" alt="Image 4">
+          <img src="g1.jpg" alt="Image 1">
+          <img src="g2.jpg" alt="Image 2">
+          <img src="g3.jpg" alt="Image 3">
+          <img src="g10.jpg" alt="Image 4">
+          <img src="g1.jpg" alt="Image 1">
+          <img src="g2.jpg" alt="Image 2">
+          <img src="g3.jpg" alt="Image 3">
+          <img src="g11.jpg" alt="Image 4">
+          <img src="g1.jpg" alt="Image 1">
+          <img src="g2.jpg" alt="Image 2">
+          <img src="g3.jpg" alt="Image 3">
+          <img src="g10.jpg" alt="Image 4">
+        </div>
+      </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MySchool. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+
+        // Toggle mobile menu
+    const menuToggle = document.getElementById("mobile-menu");
+    const navList = document.querySelector(".nav-list");
+
+    menuToggle.addEventListener("click", () => {
+      navList.classList.toggle("active");
+    });
+
+        // script.js
+const slides = document.querySelector('.slides');
+let index = 0;
+
+setInterval(() => {
+  index = (index + 1) % 5; // Cycle through 5 images
+  slides.style.transform = `translateX(${-index * 100}%)`;
+}, 4000); // Change image every 4 seconds
+    </script>
+</body>
+</html>
